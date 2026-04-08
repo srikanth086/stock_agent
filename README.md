@@ -27,7 +27,7 @@ Stock Agent leverages the power of GenAI to intelligently track, analyze, and ge
 ### 1. Requirements
 * Python 3.11+
 * `uv` or `pip` for dependency management
-* Google Cloud / Vertex AI credentials
+* OpenRouter and NewsAPI credentials
 
 ### 2. Setup
 Clone the repository and install the required dependencies:
@@ -50,10 +50,10 @@ python -m stock_agent.main "fetch AAPL data and chart the momentum strategy"
 ```
 
 ## 🔐 Credentials
-This project makes use of the latest Google Gemini models directly via Vertex AI. Ensure you have the `gcloud` CLI installed and authenticated:
+This project makes use of OpenRouter (to access LLMs like Qwen) and NewsAPI (for fetching stock news). Ensure you have these environment variables set:
 ```bash
-gcloud auth application-default login
-gcloud auth application-default set-quota-project YOUR_PROJECT_ID
+export OPENROUTER_API_KEY="your_openrouter_api_key_here"
+export NEWS_API_KEY="your_news_api_key_here"
 ```
 For GitHub deployment features, remember to set the `GITHUB_TOKEN` environment variable.
 
